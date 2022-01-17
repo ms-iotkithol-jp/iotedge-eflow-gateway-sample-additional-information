@@ -9,6 +9,24 @@
 
 以下、引っ掛かりそうなポイントを記載していく。  
 
+## Step 1: Setup Development Environment  
+Link -> https://github.com/Azure/iotedge-eflow/blob/main/samples/interop-textmsg-consoleapp/Documentation/Setup%20DevVM.MD  
+
+```
+Where would you like to create your developer environment?
+```
+"[Virtual Machine in Azure](https://github.com/Azure/iotedge-eflow/blob/main/samples/interop-textmsg-consoleapp/Documentation/Setup%20DevVM%20in%20Azure.MD)" を選択。  
+VMの作成を、https://github.com/Azure-Samples/IoTEdgeAndMlSample/blob/master/DevVM の Create-AzureDevVm.ps1 というスクリプトで作成することになっているが、2022/1/17時点で古くなって正しく動かないので、DevVM ディレクトリ直下の  [IoTEdgeMLDemoVMTemplate.json](https://github.com/Azure-Samples/IoTEdgeAndMlSample/blob/master/DevVM/IoTEdgeMLDemoVMTemplate.json) の作成する VM の SKU の指定を以下の様に書き換えてから実行する事。  
+古い：
+```
+"sku": "rs5-pro"
+```
+↓
+現状への対応：
+```
+"sku": "rs5-pro-g2"
+```
+
 ## Step 5: Create Certificates for Authentication  
 Link -> https://github.com/Azure/iotedge-eflow/blob/main/samples/interop-textmsg-consoleapp/Documentation/Create%20Certificates%20for%20Authentication.MD  
 
